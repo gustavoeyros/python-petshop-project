@@ -1,7 +1,7 @@
 from tkinter import *
 from components.navbar import Navbar
 from components.title__home import TitleHome
-from PIL import Image, ImageTk, ImageOps
+from PIL import Image, ImageTk
 
 root = Tk()
 

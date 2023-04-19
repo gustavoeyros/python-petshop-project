@@ -1,4 +1,5 @@
 from tkinter import *
+
 from components.navbar import Navbar
 
 root = Tk()
@@ -11,6 +12,7 @@ root.minsize(width=1280, height=720)
 
 
 def signUp():
+    from PIL import Image, ImageTk
     # Menu - Navbar
     navbarMenu = Navbar(master=root, width=250)
     navbarMenu.grid(row=0, column=0, padx=150, pady=15)
@@ -18,6 +20,24 @@ def signUp():
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
     containerForm.place(x=450, y=130)
+
+    # Purple - Circle
+    circle_img = Image.open('assets\\circle_home.png')
+    circle_convert = ImageTk.PhotoImage(circle_img)
+    lbl_image = Label(root, image=circle_convert, bg="#FFFFFF")
+    lbl_image.place(x=980, y=-80)
+
+    # Orange - Circle
+    orange_image = Image.open('assets\\orange_circle.png')
+    orange_convert_tk = ImageTk.PhotoImage(orange_image)
+    lbl_image = Label(root, image=orange_convert_tk, bg="#FFFFFF")
+    lbl_image.place(x=320, y=120)
+
+    # Turquoise - Circle
+    turquoise_image = Image.open('assets\\turquoise_circle.png')
+    turquoise_convert_tk = ImageTk.PhotoImage(turquoise_image)
+    lbl_image = Label(root, image=turquoise_convert_tk, bg="#FFFFFF")
+    lbl_image.place(x=1000, y=550)
 
     # Form
 
@@ -45,6 +65,3 @@ def signUp():
     btnSignUp.place(x=495, y=435)
 
     root.mainloop()
-
-
-signUp()
