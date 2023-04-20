@@ -11,7 +11,7 @@ root.maxsize(width=1280, height=720)
 root.minsize(width=1280, height=720)
 
 
-def signUp():
+def animalRegister():
     from PIL import Image, ImageTk
     # Menu - Navbar
     navbarMenu = Navbar(master=root, width=250)
@@ -47,24 +47,30 @@ def signUp():
     userLabel = Label(root, text="Name: ", font="Inter 10 bold",)
     userLabel.place(x=495, y=317)
 
-    # Email
+    # Weight
     emailEntry = Entry(root, width=55, bg="white")
     emailEntry.place(x=550, y=350)
-    emailLabel = Label(root, text="E-mail: ", font="Inter 10 bold",)
-    emailLabel.place(x=495, y=347)
+    emailLabel = Label(root, text="Weight: ", font="Inter 10 bold",)
+    emailLabel.place(x=485, y=347)
 
-    # Password
-    passwordEntry = Entry(root, width=52, bg="white")
-    passwordEntry.place(x=570, y=380)
-    passwordLabel = Label(root, text="Password: ", font="Inter 10 bold",)
+    # Age
+    passwordEntry = Entry(root, width=55, bg="white")
+    passwordEntry.place(x=550, y=380)
+    passwordLabel = Label(root, text="Age: ", font="Inter 10 bold",)
     passwordLabel.place(x=495, y=377)
 
+    # Raca
+    raceEntry = Entry(root, width=55, bg="white")
+    raceEntry.place(x=550, y=410)
+    raceLabel = Label(root, text="Race: ", font="Inter 10 bold",)
+    raceLabel.place(x=495, y=407)
+
     # Button
-    btnSignUp = Button(root, text="Sign Up",
+    btnSignUp = Button(root, text="Register Animal",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
-    btnSignUp.place(x=495, y=435)
+    btnSignUp.place(x=495, y=445)
 
     root.mainloop()
 
 
-signUp()
+animalRegister()
