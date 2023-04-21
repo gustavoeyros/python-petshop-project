@@ -71,6 +71,3 @@ def animalRegister():
     btnSignUp.place(x=495, y=445)
 
     root.mainloop()
-
-
-animalRegister()

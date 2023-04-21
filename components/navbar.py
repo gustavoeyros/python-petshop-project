@@ -14,6 +14,11 @@ class Navbar(Frame):
             self.destroy()
             signUp()
 
+        def open_animal_register():
+            from animalRegister import animalRegister
+            self.destroy()
+            animalRegister()
+
         # home_option
         home_option__navbar = Button(
             self, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
@@ -26,7 +31,7 @@ class Navbar(Frame):
 
         # animal_rgister_option
         animal_register_option__navbar = Button(
-            self, text="Animal register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
+            self, text="Animal register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_animal_register)
         animal_register_option__navbar.grid(row=0, column=2)
 
         # services_option
