@@ -15,6 +15,9 @@ def services():
     root.minsize(width=1280, height=720)
     # Menu - Navbar
 
+    photo = PhotoImage(file="assets\\window_icon.png")
+    root.iconphoto(False, photo)
+
     def open_signup():
         root.destroy()
         subprocess.run(["python", "signup.py"])
@@ -28,6 +31,7 @@ def services():
         subprocess.run(["python", "main.py"])
 
     font_default = "Inter 13 bold"
+
     # home_option
     home_option__navbar = Button(
         root, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_home)
@@ -51,6 +55,11 @@ def services():
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
     containerForm.place(x=450, y=130)
+
+    # Title
+    title_page = Label(root, text="Services",
+                       font="Inter 25 bold")
+    title_page.place(x=635, y=155)
 
     # Purple - Circle
     circle_img = Image.open('assets\\circle_home.png')

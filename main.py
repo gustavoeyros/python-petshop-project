@@ -16,6 +16,9 @@ def home():
     from PIL import Image, ImageTk
     # Menu - Navbar
 
+    photo = PhotoImage(file="assets\\window_icon.png")
+    root.iconphoto(False, photo)
+
     def open_signup():
         root.destroy()
         subprocess.run(["python", "signup.py"])

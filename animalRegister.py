@@ -12,6 +12,9 @@ def animalRegister():
     root.maxsize(width=1280, height=720)
     root.minsize(width=1280, height=720)
 
+    photo = PhotoImage(file="assets\\window_icon.png")
+    root.iconphoto(False, photo)
+
     # Menu - Navbar
 
     def open_signup():
@@ -50,6 +53,11 @@ def animalRegister():
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
     containerForm.place(x=450, y=130)
+
+    # Title
+    title_page = Label(root, text="Animal Register",
+                       font="Inter 25 bold")
+    title_page.place(x=570, y=155)
 
     # Purple - Circle
     circle_img_animal_register = Image.open('assets\\circle_home.png')

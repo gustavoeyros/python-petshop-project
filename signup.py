@@ -15,6 +15,9 @@ def signUp():
     from PIL import Image, ImageTk
     # Menu - Navbar
 
+    photo = PhotoImage(file="assets\\window_icon.png")
+    root.iconphoto(False, photo)
+
     def open_animal_register():
         root.destroy()
         subprocess.run(["python", "animalRegister.py"])
@@ -53,6 +56,11 @@ def signUp():
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
     containerForm.place(x=450, y=130)
+
+    # Title
+    title_page = Label(root, text="Sign Up",
+                       font="Inter 25 bold")
+    title_page.place(x=635, y=155)
 
     # Purple - Circle
     circle_image_signup = Image.open('assets\\circle_home.png')
