@@ -1,9 +1,14 @@
 from tkinter import *
+import subprocess
 
 
 class TitleHome(Frame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
+
+        def open_signup():
+            self.destroy()
+            subprocess.run(["python", "signup.py"])
 
         # main title
         main_title = Label(
@@ -24,7 +29,7 @@ class TitleHome(Frame):
             btn['background'] = '#8C30F5'
 
         btn = Button(self, text="Sign Up",
-                     font="Inter 15 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=15)
+                     font="Inter 15 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=15, command=open_signup)
         btn.grid(row=3, column=0, pady=50)
 
         btn.bind("<Enter>", on_enter)

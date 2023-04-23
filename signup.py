@@ -18,6 +18,14 @@ def signUp():
     photo = PhotoImage(file="assets\\window_icon.png")
     root.iconphoto(False, photo)
 
+    def open_home():
+        root.destroy()
+        subprocess.run(["python", "main.py"])
+
+    def open_signup():
+        root.destroy()
+        subprocess.run(["python", "signup.py"])
+
     def open_animal_register():
         root.destroy()
         subprocess.run(["python", "animalRegister.py"])
@@ -26,9 +34,9 @@ def signUp():
         root.destroy()
         subprocess.run(["python", "services.py"])
 
-    def open_home():
+    def open_login():
         root.destroy()
-        subprocess.run(["python", "main.py"])
+        subprocess.run(["python", "login.py"])
 
     font_default = "Inter 13 bold"
     # home_option
@@ -38,7 +46,7 @@ def signUp():
 
     # signup_option
     signup_option__navbar = Button(
-        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
+        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
     signup_option__navbar.grid(row=0, column=1)
 
     # animal_rgister_option
@@ -50,6 +58,11 @@ def signUp():
     services_option__navbar = Button(
         root, text="Services", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_services)
     services_option__navbar.grid(row=0, column=3)
+
+    # login_option
+    login_option__navbar = Button(
+        root, text="Login", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_login)
+    login_option__navbar.grid(row=0, column=4)
 
     ####
 

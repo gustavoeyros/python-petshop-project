@@ -19,6 +19,10 @@ def home():
     photo = PhotoImage(file="assets\\window_icon.png")
     root.iconphoto(False, photo)
 
+    def open_home():
+        root.destroy()
+        subprocess.run(["python", "main.py"])
+
     def open_signup():
         root.destroy()
         subprocess.run(["python", "signup.py"])
@@ -31,10 +35,14 @@ def home():
         root.destroy()
         subprocess.run(["python", "services.py"])
 
+    def open_login():
+        root.destroy()
+        subprocess.run(["python", "login.py"])
+
     font_default = "Inter 13 bold"
     # home_option
     home_option__navbar = Button(
-        root, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
+        root, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_home)
     home_option__navbar.grid(row=0, column=0)
 
     # signup_option
@@ -51,6 +59,11 @@ def home():
     services_option__navbar = Button(
         root, text="Services", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_services)
     services_option__navbar.grid(row=0, column=3)
+
+    # login_option
+    login_option__navbar = Button(
+        root, text="Login", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_login)
+    login_option__navbar.grid(row=0, column=4)
 
     titleHome = TitleHome(master=root, bg="#FFFFFF")
     titleHome.place(x=5, y=150)
