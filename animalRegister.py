@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import filedialog
 from PIL import Image, ImageTk
 import subprocess
 
@@ -64,7 +65,7 @@ def animalRegister():
     login_option__navbar.grid(row=0, column=4)
 
     # Container - Form
-    containerForm = Frame(root, width=500, height=500)
+    containerForm = Frame(root, width=500, height=575)
     containerForm.place(x=450, y=130)
 
     # Title
@@ -94,6 +95,12 @@ def animalRegister():
 
     # Form
 
+    # Code
+    codeEntry = Entry(root, width=55, bg="white")
+    codeEntry.place(x=550, y=290)
+    codeLabel = Label(root, text="Code: ", font="Inter 10 bold",)
+    codeLabel.place(x=495, y=287)
+
     # Name
     userEntry = Entry(root, width=55, bg="white")
     userEntry.place(x=550, y=320)
@@ -118,10 +125,80 @@ def animalRegister():
     raceLabel = Label(root, text="Race: ", font="Inter 10 bold",)
     raceLabel.place(x=495, y=407)
 
+    # Gender
+    genderLabel = Label(root, text="Gender: ", font="Inter 10 bold",)
+    genderLabel.place(x=485, y=437)
+
+    gender = StringVar()
+    gender.set("M")
+
+    optionMGender = Radiobutton(root, text="M", variable=gender, value="M")
+    optionMGender.place(x=550, y=438)
+
+    optionFGender = Radiobutton(root, text="F", variable=gender, value="F")
+    optionFGender.place(x=600, y=438)
+
+    # Specie
+    specieEntry = Entry(root, width=55, bg="white")
+    specieEntry.place(x=550, y=468)
+    specieLabel = Label(root, text="Specie: ", font="Inter 10 bold",)
+    specieLabel.place(x=485, y=465)
+
+    # Birth
+    birthEntry = Entry(root, width=55, bg="white")
+    birthEntry.place(x=550, y=498)
+    birthLabel = Label(root, text="Birth: ", font="Inter 10 bold",)
+    birthLabel.place(x=495, y=495)
+
+    # Update
+    updateEntry = Entry(root, width=55, bg="white")
+    updateEntry.place(x=551, y=528)
+    updateLabel = Label(root, text="Update date: ", font="Inter 10 bold",)
+    updateLabel.place(x=460, y=525)
+
+    # Registration Date
+    registrationEntry = Entry(root, width=49, bg="white")
+    registrationEntry.place(x=583, y=558)
+    registrationLabel = Label(
+        root, text="Registration date: ", font="Inter 10 bold",)
+    registrationLabel.place(x=460, y=555)
+
+    # Description
+    descriptionEntry = Entry(root, width=53, bg="white")
+    descriptionEntry.place(x=565, y=585)
+    descriptionLabel = Label(root, text="Description: ", font="Inter 10 bold",)
+    descriptionLabel.place(x=475, y=583)
+
+    # Choose an image
+
+    initial_folder = ""
+
+    def choose_image():
+        image_path = filedialog.askopenfilename(initialdir=initial_folder, title="Choose an image", filetypes=(
+            ("Arquivos de imagem", "*.jpg;*.jpeg;*.png"), ("Todos os arquivos", "*.*")))
+
+        image_pil = Image.open(image_path)
+        widthImage, heightImage = image_pil.size
+        if widthImage > 150:
+            proportion = widthImage / 150
+            new_height = int(widthImage/proportion)
+            image_pil = image_pil.resize((110, new_height))
+        image_tk = ImageTk.PhotoImage(image_pil)
+        lbl_image = Label(root, image=image_tk)
+        lbl_image.image = image_tk
+        lbl_image.place(x=200, y=250)
+
+    descriptionButton = Button(
+        root, text="Choose an image", width=15, height=1, bg="white", command=choose_image)
+    descriptionButton.place(x=585, y=610)
+    descriptionLabel = Label(
+        root, text="Choose an image: ", font="Inter 10 bold",)
+    descriptionLabel.place(x=460, y=612)
+
     # Button
     btnSignUp = Button(root, text="Register Animal",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
-    btnSignUp.place(x=495, y=445)
+    btnSignUp.place(x=495, y=650)
 
     root.mainloop()
 
