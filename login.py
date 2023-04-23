@@ -46,7 +46,7 @@ def login():
 
     # signup_option
     signup_option__navbar = Button(
-        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
+        root, text="Client Register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
     signup_option__navbar.grid(row=0, column=1)
 
     # animal_rgister_option

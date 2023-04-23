@@ -46,7 +46,7 @@ def services():
 
     # signup_option
     signup_option__navbar = Button(
-        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
+        root, text="Client Register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
     signup_option__navbar.grid(row=0, column=1)
 
     # animal_rgister_option
@@ -93,6 +93,13 @@ def services():
 
     # Form
 
+    # Code
+
+    codeEntry = Entry(root, width=55, bg="white")
+    codeEntry.place(x=550, y=290)
+    codeLabel = Label(root, text="Code: ", font="Inter 10 bold",)
+    codeLabel.place(x=495, y=287)
+
     # Name
     nameEntry = Entry(root, width=55, bg="white")
     nameEntry.place(x=550, y=320)
@@ -117,10 +124,16 @@ def services():
     descriptionLabel = Label(root, text="Description: ", font="Inter 10 bold",)
     descriptionLabel.place(x=460, y=407)
 
+    # Duration
+    durationEntry = Entry(root, width=55, bg="white")
+    durationEntry.place(x=550, y=440)
+    durationLabel = Label(root, text="Duration: ", font="Inter 10 bold",)
+    durationLabel.place(x=475, y=437)
+
     # Button
     btnSignUp = Button(root, text="Register service",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
-    btnSignUp.place(x=495, y=445)
+    btnSignUp.place(x=495, y=475)
 
     root.mainloop()
 

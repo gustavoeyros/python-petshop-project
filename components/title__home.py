@@ -28,7 +28,7 @@ class TitleHome(Frame):
         def on_leave(e):
             btn['background'] = '#8C30F5'
 
-        btn = Button(self, text="Sign Up",
+        btn = Button(self, text="Client register",
                      font="Inter 15 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=15, command=open_signup)
         btn.grid(row=3, column=0, pady=50)
 

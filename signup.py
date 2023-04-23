@@ -46,7 +46,7 @@ def signUp():
 
     # signup_option
     signup_option__navbar = Button(
-        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
+        root, text="Client Register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
     signup_option__navbar.grid(row=0, column=1)
 
     # animal_rgister_option
@@ -71,9 +71,9 @@ def signUp():
     containerForm.place(x=450, y=130)
 
     # Title
-    title_page = Label(root, text="Sign Up",
+    title_page = Label(root, text="Client Register",
                        font="Inter 25 bold")
-    title_page.place(x=635, y=155)
+    title_page.place(x=600, y=155)
 
     # Purple - Circle
     circle_image_signup = Image.open('assets\\circle_home.png')
@@ -95,28 +95,71 @@ def signUp():
 
     # Form
 
+    # Code
+    codeEntry = Entry(root, width=55, bg="white")
+    codeEntry.place(x=550, y=290)
+    codeLabel = Label(root, text="Code: ", font="Inter 10 bold",)
+    codeLabel.place(x=495, y=287)
+
     # Name
     userEntry = Entry(root, width=55, bg="white")
     userEntry.place(x=550, y=320)
     userLabel = Label(root, text="Name: ", font="Inter 10 bold",)
     userLabel.place(x=495, y=317)
 
+    # CPF
+    cpfEntry = Entry(root, width=55, bg="white")
+    cpfEntry.place(x=550, y=350)
+    cpfLabel = Label(root, text="CPF: ", font="Inter 10 bold",)
+    cpfLabel.place(x=495, y=347)
+
+    # Birth
+    birthEntry = Entry(root, width=55, bg="white")
+    birthEntry.place(x=550, y=380)
+    birthLabel = Label(root, text="Birth: ", font="Inter 10 bold",)
+    birthLabel.place(x=495, y=377)
+
+    # Age
+    ageEntry = Entry(root, width=55, bg="white")
+    ageEntry.place(x=550, y=410)
+    ageLabel = Label(root, text="Age: ", font="Inter 10 bold",)
+    ageLabel.place(x=495, y=407)
+
+    # Address
+    addressEntry = Entry(root, width=55, bg="white")
+    addressEntry.place(x=550, y=440)
+    addressLabel = Label(root, text="Address: ", font="Inter 10 bold",)
+    addressLabel.place(x=475, y=437)
+
+    # Phone
+    phoneEntry = Entry(root, width=55, bg="white")
+    phoneEntry.place(x=550, y=470)
+    phoneLabel = Label(root, text="Phone: ", font="Inter 10 bold",)
+    phoneLabel.place(x=495, y=467)
+
+    # Registration date
+    registrationDateEntry = Entry(root, width=51, bg="white")
+    registrationDateEntry.place(x=575, y=500)
+    registrationDateLabel = Label(
+        root, text="Registration date: ", font="Inter 10 bold",)
+    registrationDateLabel.place(x=450, y=497)
+
     # Email
     emailEntry = Entry(root, width=55, bg="white")
-    emailEntry.place(x=550, y=350)
+    emailEntry.place(x=550, y=530)
     emailLabel = Label(root, text="E-mail: ", font="Inter 10 bold",)
-    emailLabel.place(x=495, y=347)
+    emailLabel.place(x=495, y=527)
 
     # Password
     passwordEntry = Entry(root, width=52, bg="white")
-    passwordEntry.place(x=570, y=380)
+    passwordEntry.place(x=570, y=560)
     passwordLabel = Label(root, text="Password: ", font="Inter 10 bold",)
-    passwordLabel.place(x=495, y=377)
+    passwordLabel.place(x=495, y=557)
 
     # Button
-    btnSignUp = Button(root, text="Sign Up",
+    btnSignUp = Button(root, text="Register",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
-    btnSignUp.place(x=495, y=435)
+    btnSignUp.place(x=495, y=590)
 
     root.mainloop()
 
