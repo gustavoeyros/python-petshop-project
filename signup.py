@@ -1,31 +1,64 @@
 from tkinter import *
-
-from components.navbar import Navbar
-
-root = Tk()
-
-root.title("Petshop Dog's")
-root.config(background='#FFFFFF')
-root.resizable(False, False)
-root.maxsize(width=1280, height=720)
-root.minsize(width=1280, height=720)
+import subprocess
 
 
 def signUp():
+
+    root = Tk()
+
+    root.title("Petshop Dog's")
+    root.config(background='#FFFFFF')
+    root.resizable(False, False)
+    root.maxsize(width=1280, height=720)
+    root.minsize(width=1280, height=720)
+
     from PIL import Image, ImageTk
     # Menu - Navbar
-    navbarMenu = Navbar(master=root, width=250)
-    navbarMenu.grid(row=0, column=0, padx=150, pady=15)
+
+    def open_animal_register():
+        root.destroy()
+        subprocess.run(["python", "animalRegister.py"])
+
+    def open_services():
+        root.destroy()
+        subprocess.run(["python", "services.py"])
+
+    def open_home():
+        root.destroy()
+        subprocess.run(["python", "main.py"])
+
+    font_default = "Inter 13 bold"
+    # home_option
+    home_option__navbar = Button(
+        root, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_home)
+    home_option__navbar.grid(row=0, column=0)
+
+    # signup_option
+    signup_option__navbar = Button(
+        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
+    signup_option__navbar.grid(row=0, column=1)
+
+    # animal_rgister_option
+    animal_register_option__navbar = Button(
+        root, text="Animal register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_animal_register)
+    animal_register_option__navbar.grid(row=0, column=2)
+
+    # services_option
+    services_option__navbar = Button(
+        root, text="Services", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_services)
+    services_option__navbar.grid(row=0, column=3)
+
+    ####
 
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
     containerForm.place(x=450, y=130)
 
     # Purple - Circle
-    circle_img = Image.open('assets\\circle_home.png')
-    circle_convert = ImageTk.PhotoImage(circle_img)
-    lbl_image = Label(root, image=circle_convert, bg="#FFFFFF")
-    lbl_image.place(x=980, y=-80)
+    circle_image_signup = Image.open('assets\\circle_home.png')
+    circle_convert_signup = ImageTk.PhotoImage(circle_image_signup)
+    lbl_image_signup = Label(root, image=circle_convert_signup, bg="#FFFFFF")
+    lbl_image_signup.place(x=980, y=-80)
 
     # Orange - Circle
     orange_image = Image.open('assets\\orange_circle.png')
@@ -65,3 +98,6 @@ def signUp():
     btnSignUp.place(x=495, y=435)
 
     root.mainloop()
+
+
+signUp()

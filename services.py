@@ -1,21 +1,52 @@
 from tkinter import *
 from tkinter import ttk
-from components.navbar import Navbar
-
-root = Tk()
-
-root.title("Petshop Dog's")
-root.config(background='#FFFFFF')
-root.resizable(False, False)
-root.maxsize(width=1280, height=720)
-root.minsize(width=1280, height=720)
+import subprocess
 
 
 def services():
     from PIL import Image, ImageTk
+
+    root = Tk()
+
+    root.title("Petshop Dog's")
+    root.config(background='#FFFFFF')
+    root.resizable(False, False)
+    root.maxsize(width=1280, height=720)
+    root.minsize(width=1280, height=720)
     # Menu - Navbar
-    navbarMenu = Navbar(master=root, width=250)
-    navbarMenu.grid(row=0, column=0, padx=150, pady=15)
+
+    def open_signup():
+        root.destroy()
+        subprocess.run(["python", "signup.py"])
+
+    def open_animal_register():
+        root.destroy()
+        subprocess.run(["python", "animalRegister.py"])
+
+    def open_home():
+        root.destroy()
+        subprocess.run(["python", "main.py"])
+
+    font_default = "Inter 13 bold"
+    # home_option
+    home_option__navbar = Button(
+        root, text="Home", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_home)
+    home_option__navbar.grid(row=0, column=0)
+
+    # signup_option
+    signup_option__navbar = Button(
+        root, text="Sign up", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_signup)
+    signup_option__navbar.grid(row=0, column=1)
+
+    # animal_rgister_option
+    animal_register_option__navbar = Button(
+        root, text="Animal register", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_animal_register)
+    animal_register_option__navbar.grid(row=0, column=2)
+
+    # services_option
+    services_option__navbar = Button(
+        root, text="Services", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0)
+    services_option__navbar.grid(row=0, column=3)
 
     # Container - Form
     containerForm = Frame(root, width=500, height=500)
