@@ -65,7 +65,7 @@ def animalRegister():
     login_option__navbar.grid(row=0, column=4)
 
     # Container - Form
-    containerForm = Frame(root, width=500, height=575)
+    containerForm = Frame(root, width=500, height=585)
     containerForm.place(x=450, y=130)
 
     # Title
@@ -197,8 +197,20 @@ def animalRegister():
 
     # Button
     btnSignUp = Button(root, text="Register Animal",
-                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=20)
     btnSignUp.place(x=495, y=650)
+
+    btnDelete = Button(root, text="Delete",
+                       font="Inter 10 bold", fg="white", bg="red", border=5, background="red", bd=0, width=20)
+    btnDelete.place(x=685, y=650)
+
+    btnUpdate = Button(root, text="Update",
+                       font="Inter 10 bold", fg="white", bg="green", border=5, background="green", bd=0, width=20)
+    btnUpdate.place(x=495, y=680)
+
+    btnSearch = Button(root, text="Search",
+                       font="Inter 10 bold", fg="white", bg="blue", border=5, background="blue", bd=0, width=20)
+    btnSearch.place(x=685, y=680)
 
     root.mainloop()
 

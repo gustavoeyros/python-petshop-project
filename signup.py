@@ -67,7 +67,7 @@ def signUp():
     ####
 
     # Container - Form
-    containerForm = Frame(root, width=500, height=500)
+    containerForm = Frame(root, width=500, height=580)
     containerForm.place(x=450, y=130)
 
     # Title
@@ -156,10 +156,22 @@ def signUp():
     passwordLabel = Label(root, text="Password: ", font="Inter 10 bold",)
     passwordLabel.place(x=495, y=557)
 
-    # Button
+    # Buttons
     btnSignUp = Button(root, text="Register",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
     btnSignUp.place(x=495, y=590)
+
+    btnDelete = Button(root, text="Delete",
+                       font="Inter 10 bold", fg="white", bg="red", border=5, background="red", bd=0, width=48)
+    btnDelete.place(x=495, y=620)
+
+    btnUpdate = Button(root, text="Update",
+                       font="Inter 10 bold", fg="white", bg="green", border=5, background="green", bd=0, width=48)
+    btnUpdate.place(x=495, y=650)
+
+    btnSearch = Button(root, text="Search",
+                       font="Inter 10 bold", fg="white", bg="blue", border=5, background="blue", bd=0, width=48)
+    btnSearch.place(x=495, y=680)
 
     root.mainloop()
 
