@@ -1,5 +1,5 @@
 from tkinter import *
-
+from tkinter import ttk
 from components.navbar import Navbar
 
 root = Tk()
@@ -11,7 +11,7 @@ root.maxsize(width=1280, height=720)
 root.minsize(width=1280, height=720)
 
 
-def signUp():
+def services():
     from PIL import Image, ImageTk
     # Menu - Navbar
     navbarMenu = Navbar(master=root, width=250)
@@ -42,26 +42,35 @@ def signUp():
     # Form
 
     # Name
-    userEntry = Entry(root, width=55, bg="white")
-    userEntry.place(x=550, y=320)
-    userLabel = Label(root, text="Name: ", font="Inter 10 bold",)
-    userLabel.place(x=495, y=317)
+    nameEntry = Entry(root, width=55, bg="white")
+    nameEntry.place(x=550, y=320)
+    nameLabel = Label(root, text="Name: ", font="Inter 10 bold",)
+    nameLabel.place(x=495, y=317)
 
-    # Email
-    emailEntry = Entry(root, width=55, bg="white")
-    emailEntry.place(x=550, y=350)
-    emailLabel = Label(root, text="E-mail: ", font="Inter 10 bold",)
-    emailLabel.place(x=495, y=347)
+    # Services
+    serviceBox = ttk.Combobox(root, values=["Health", "Education", "Dog Bath"])
+    serviceBox.place(x=550, y=350)
+    serviceLabel = Label(root, text="Service type: ", font="Inter 10 bold",)
+    serviceLabel.place(x=455, y=347)
 
-    # Password
-    passwordEntry = Entry(root, width=52, bg="white")
-    passwordEntry.place(x=570, y=380)
-    passwordLabel = Label(root, text="Password: ", font="Inter 10 bold",)
-    passwordLabel.place(x=495, y=377)
+    # Value
+    valueEntry = Entry(root, width=55, bg="white")
+    valueEntry.place(x=550, y=380)
+    valueLabel = Label(root, text="Value: ", font="Inter 10 bold",)
+    valueLabel.place(x=495, y=377)
+
+    # Description
+    descriptionEntry = Entry(root, width=55, bg="white")
+    descriptionEntry.place(x=550, y=410)
+    descriptionLabel = Label(root, text="Description: ", font="Inter 10 bold",)
+    descriptionLabel.place(x=460, y=407)
 
     # Button
-    btnSignUp = Button(root, text="Sign Up",
+    btnSignUp = Button(root, text="Register service",
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48)
-    btnSignUp.place(x=495, y=435)
+    btnSignUp.place(x=495, y=445)
 
     root.mainloop()
+
+
+services()
