@@ -25,6 +25,11 @@ def login():
     def open_update():
         subprocess.run(["python", "crud__update.py"])
 
+    def open_read():
+        subprocess.run(["python", "crud__read.py"])
+
+    def open_rotate():
+        subprocess.run(["python", "rotateImage.py"])
     # Menu - Navbar
 
     photo = PhotoImage(file="assets\\window_icon.png")
@@ -121,7 +126,7 @@ def login():
     btnCreate.place(x=495, y=300)
 
     btnRead = Button(root, text="Read",
-                     font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+                     font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2, command=open_read)
     btnRead.place(x=495, y=350)
 
     btnUpdate = Button(root, text="Update",
@@ -133,8 +138,8 @@ def login():
     btnDelete.place(x=495, y=450)
 
     btnRotate = Button(root, text="Rotate Image",
-                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2,  command=open_delete)
-    btnRotate.place(x=495, y=450)
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2,  command=open_rotate)
+    btnRotate.place(x=495, y=500)
 
     root.mainloop()
 
