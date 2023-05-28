@@ -13,6 +13,15 @@ def login():
     root.minsize(width=1280, height=720)
 
     from PIL import Image, ImageTk
+
+    # CRUD - Navbar
+
+    def open_create():
+        subprocess.run(["python", "crud__create.py"])
+
+    def open_delete():
+        subprocess.run(["python", "crud__delete.py"])
+
     # Menu - Navbar
 
     photo = PhotoImage(file="assets\\window_icon.png")
@@ -105,7 +114,7 @@ def login():
     # Form
     # Buttons
     btnCreate = Button(root, text="Create",
-                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2, command=open_create)
     btnCreate.place(x=495, y=300)
 
     btnRead = Button(root, text="Read",
@@ -117,7 +126,7 @@ def login():
     btnUpdate.place(x=495, y=400)
 
     btnDelete = Button(root, text="Delete",
-                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2,  command=open_delete)
     btnDelete.place(x=495, y=450)
 
     root.mainloop()
