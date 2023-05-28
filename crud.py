@@ -22,6 +22,9 @@ def login():
     def open_delete():
         subprocess.run(["python", "crud__delete.py"])
 
+    def open_update():
+        subprocess.run(["python", "crud__update.py"])
+
     # Menu - Navbar
 
     photo = PhotoImage(file="assets\\window_icon.png")
@@ -122,7 +125,7 @@ def login():
     btnRead.place(x=495, y=350)
 
     btnUpdate = Button(root, text="Update",
-                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2, command=open_update)
     btnUpdate.place(x=495, y=400)
 
     btnDelete = Button(root, text="Delete",

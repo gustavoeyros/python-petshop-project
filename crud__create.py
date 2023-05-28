@@ -1,8 +1,7 @@
-from PIL import Image, ImageTk
 from tkinter import *
 import tkinter.messagebox as MessageBox
 import mysql.connector as mysql
-import subprocess
+
 
 root = Tk()
 

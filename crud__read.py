@@ -16,7 +16,7 @@ root.iconphoto(False, photo)
 # Database function
 
 
-def delete():
+def read():
     id = entry_id.get()
 
     if (id == ""):
@@ -25,10 +25,12 @@ def delete():
         connection = mysql.connect(
             host="localhost", user="root", password="", database="crud_python_tkinter")
         cursor = connection.cursor()
-        cursor.execute("DELETE FROM usuario WHERE codigo='"+id+"'")
-        cursor.execute("commit")
+        cursor.execute("SELECT * FROM usuario WHERE codigo='"+id+"'")
+        rows = cursor.fetchall()
 
-        MessageBox.showinfo("Success", "Dados excluídos com sucesso!")
+        for row in rows:
+            entry_name.insert(0, row[1])
+            entry_phone.insert(0, row[2])
         connection.close()
 
 
@@ -39,10 +41,23 @@ lbl_id.place(x=10, y=50)
 entry_id = Entry(root, font="Arial 12", width=10)
 entry_id.place(x=80, y=50)
 
+lbl_name = Label(root, text="Nome: ", font="Arial 12", bg="#FFFFFF")
+lbl_name.place(x=10, y=80)
 
-btnSave = Button(root, text="Deletar",
-                 font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=20, height=2, command=delete)
-btnSave.place(x=10, y=100)
+entry_name = Entry(root, font="Arial 12", width=10)
+entry_name.place(x=80, y=80)
+
+
+lbl_phone = Label(root, text="Telefone: ", font="Arial 12", bg="#FFFFFF")
+lbl_phone.place(x=10, y=110)
+
+entry_phone = Entry(root, font="Arial 12", width=10)
+entry_phone.place(x=80, y=110)
+
+
+btnSave = Button(root, text="Consultar",
+                 font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=20, height=2, command=read)
+btnSave.place(x=10, y=150)
 
 # Database functions
 
