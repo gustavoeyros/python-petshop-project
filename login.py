@@ -38,6 +38,10 @@ def login():
         root.destroy()
         subprocess.run(["python", "login.py"])
 
+    def open_crud():
+        root.destroy()
+        subprocess.run(["python", "crud.py"])
+
     font_default = "Inter 13 bold"
     # home_option
     home_option__navbar = Button(
@@ -63,6 +67,11 @@ def login():
     login_option__navbar = Button(
         root, text="Login", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_login)
     login_option__navbar.grid(row=0, column=4)
+
+    # crud_option
+    crud_option__navbar = Button(
+        root, text="CMS", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_crud)
+    crud_option__navbar.grid(row=0, column=5)
 
     ####
 

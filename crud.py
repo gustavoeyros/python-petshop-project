@@ -2,7 +2,7 @@ from tkinter import *
 import subprocess
 
 
-def home():
+def login():
 
     root = Tk()
 
@@ -12,7 +12,6 @@ def home():
     root.maxsize(width=1280, height=720)
     root.minsize(width=1280, height=720)
 
-    from components.title__home import TitleHome
     from PIL import Image, ImageTk
     # Menu - Navbar
 
@@ -74,34 +73,54 @@ def home():
         root, text="CMS", font=font_default, fg="#18191F", bg="#FFFFFF", padx=15, bd=0, border=0, command=open_crud)
     crud_option__navbar.grid(row=0, column=5)
 
-    titleHome = TitleHome(master=root, bg="#FFFFFF")
-    titleHome.place(x=5, y=150)
+    ####
+
+    # Container - Form
+    containerForm = Frame(root, width=500, height=500)
+    containerForm.place(x=450, y=130)
+
+    # Title
+    title_page = Label(root, text="Painel - CMS",
+                       font="Inter 25 bold")
+    title_page.place(x=605, y=155)
 
     # Purple - Circle
-    circle_image_main = Image.open('assets\\circle_home.png')
-    circle_convert_tk_main = ImageTk.PhotoImage(circle_image_main)
-    lbl_image_main = Label(root, image=circle_convert_tk_main, bg="#FFFFFF")
-    lbl_image_main.place(x=800, y=-80)
+    circle_image_signup = Image.open('assets\\circle_home.png')
+    circle_convert_signup = ImageTk.PhotoImage(circle_image_signup)
+    lbl_image_signup = Label(root, image=circle_convert_signup, bg="#FFFFFF")
+    lbl_image_signup.place(x=980, y=-80)
 
     # Orange - Circle
-    orange_image_main = Image.open('assets\\orange_circle.png')
-    orange_convert_tk_main = ImageTk.PhotoImage(orange_image_main)
-    lbl_image_main = Label(root, image=orange_convert_tk_main, bg="#FFFFFF")
-    lbl_image_main.place(x=670, y=300)
+    orange_image = Image.open('assets\\orange_circle.png')
+    orange_convert_tk = ImageTk.PhotoImage(orange_image)
+    lbl_image = Label(root, image=orange_convert_tk, bg="#FFFFFF")
+    lbl_image.place(x=320, y=120)
 
     # Turquoise - Circle
-    turquoise_image_main = Image.open('assets\\turquoise_circle.png')
-    turquoise_convert_tk_main = ImageTk.PhotoImage(turquoise_image_main)
-    lbl_image_main = Label(root, image=turquoise_convert_tk_main, bg="#FFFFFF")
-    lbl_image_main.place(x=885, y=550)
+    turquoise_image = Image.open('assets\\turquoise_circle.png')
+    turquoise_convert_tk = ImageTk.PhotoImage(turquoise_image)
+    lbl_image = Label(root, image=turquoise_convert_tk, bg="#FFFFFF")
+    lbl_image.place(x=1000, y=550)
 
-    # Dog - Image
-    dog_image_main = Image.open('assets\\dog_home.png')
-    dog_convert_tk_main = ImageTk.PhotoImage(dog_image_main)
-    lbl_image_main = Label(root, image=dog_convert_tk_main, bg="#FFFFFF")
-    lbl_image_main.place(x=750, y=125)
+    # Form
+    # Buttons
+    btnCreate = Button(root, text="Create",
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+    btnCreate.place(x=495, y=300)
+
+    btnRead = Button(root, text="Read",
+                     font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+    btnRead.place(x=495, y=350)
+
+    btnUpdate = Button(root, text="Update",
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+    btnUpdate.place(x=495, y=400)
+
+    btnDelete = Button(root, text="Delete",
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2)
+    btnDelete.place(x=495, y=450)
 
     root.mainloop()
 
 
-home()
+login()
