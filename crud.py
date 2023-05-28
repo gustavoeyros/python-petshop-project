@@ -132,6 +132,10 @@ def login():
                        font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2,  command=open_delete)
     btnDelete.place(x=495, y=450)
 
+    btnRotate = Button(root, text="Rotate Image",
+                       font="Inter 10 bold", fg="white", bg="#8C30F5", border=5, background="#8C30F5", bd=0, width=48, height=2,  command=open_delete)
+    btnRotate.place(x=495, y=450)
+
     root.mainloop()
 
 
